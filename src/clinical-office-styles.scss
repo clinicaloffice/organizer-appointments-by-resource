@@ -1,0 +1,644 @@
+/*
+    Clinical Office: MPage Developer Standard Styles
+
+    Note: The CSS definitions included in this file are required for the presentation of the standard
+    Clinical Office: MPage Developer components and care should be taken when modifying any values. This said,
+    this is your MPage and we encourage you to make modifications that suit your business needs.
+*/
+
+@use '@angular/cdk' as cdk;
+
+@include cdk.overlay();
+
+.material-icons, .material-symbols-outlined {
+  font-size: inherit;
+}
+
+/*
+  --------------------
+  Generic Flex Helpers
+  --------------------
+*/
+.flex, .flex-column {
+  display: flex;
+  min-width: 0;
+  min-height: 0;
+}
+
+.flex-gap {
+  gap: 8px;
+}
+
+.flex-center-items {
+  align-items: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-fill {
+  flex: 1 1 auto;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+/*
+  ---------------
+  Misc Helper CSS
+  ---------------
+*/
+
+.prevent-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.disabled {
+  color: var(--text-color-alternate);
+}
+
+.disabled:hover {
+  cursor: not-allowed;
+}
+
+.co-min-width {
+  min-width: 5em;
+}
+
+.co-w5 {
+  width: 5%;
+}
+
+.co-w10 {
+  width: 10%;
+}
+
+.co-w15 {
+  width: 15%;
+}
+
+.co-w20 {
+  width: 20%;
+}
+
+.co-w25 {
+  width: 25%;
+}
+
+.co-w30 {
+  width: 30%;
+}
+
+.co-w40 {
+  width: 40%;
+}
+
+.co-w50 {
+  width: 50%;
+}
+
+.co-w100 {
+  width: 100%;
+}
+
+.co-wdate {
+  width: 11em !important;
+}
+
+/* MPage Table */
+div.co-table-container {
+  max-width: 100%;
+  max-height: 100%;
+  overflow-x: auto;
+  border: var(--mpage-table-container-border);
+}
+
+table.co-table {
+  display: block;
+  max-width: 100%;
+  width: fit-content;
+  overflow-x: auto;
+  table-layout: fixed;
+  background-color: var(--mpage-table-background-color);
+
+  border-collapse: separate;
+  border-spacing: 0;
+
+  th, td {
+    white-space: nowrap;
+    vertical-align: middle;
+    border: var(--mpage-table-cell-border);
+  }
+
+  th {
+    height: var(--mpage-table-header-height);
+  }
+
+  td {
+    height: var(--mpage-table-row-height);
+    font-size: var(--mpage-table-font-size);
+  }
+
+  thead > tr {
+    background-color: var(--mpage-table-header-background-color);
+  }
+
+  tbody > tr {
+    background-color: var(--mpage-table-background-color);
+  }
+
+  tbody > tr:hover {
+    cursor: pointer;
+    background-color: var(--context-hover);
+  }
+
+  .co-table-sort-arrow {
+    color: var(--mpage-table-sort-arrow-color);
+    font-size: 1.5em;
+  }
+
+  .cdk-table-sticky {
+    background-color: inherit;
+    border: var(--mpage-table-cell-border);
+  }
+
+  th.co-table-sort-header:hover {
+    cursor: pointer;
+  }
+
+  .resize-space, .resize-column {
+    flex-shrink: 0;
+    width: 4px;
+  }
+
+  .resize-column:hover {
+    cursor: w-resize;
+  }
+}
+
+div.co-table-content, .co-table-filter-content {
+  margin: 4px;
+  flex-shrink: 1;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.co-table-filter-content {
+  background-color: var(--mpage-table-filter-background-color);
+  padding: 4px;
+  font-size: smaller;
+
+  > div {
+    width: 100%;
+    justify-content: space-between
+  }
+}
+
+.co-table-empty-space {
+  background: var(--mpage-table-empty-space-background);
+}
+
+
+.patient-search-fix-table {
+  * > .co-table-container {
+    border: unset;
+  }
+  * > .co-table-empty-space {
+    background: unset
+  }
+}
+
+div.co-table-toolbar {
+  max-width: 100%;
+  flex-shrink: 0;
+  padding: var(--mpage-table-toolbar-padding);
+  color: var(--mpage-table-toolbar-icon-color);
+  background-color: var(--mpage-table-toolbar-background-color);
+  border-radius: var(--mpage-table-toolbar-border-radius);
+  box-shadow: var(--mpage-table-toolbar-box-shadow);
+  height: var(--mpage-table-toolbar-box-height);
+
+  div:first-child {
+    flex-shrink: 0;
+  }
+
+  > div:nth-child(2) {
+    flex-shrink: 0;
+    flex-grow: 1;
+    width: fit-content;
+    max-width: fit-content;
+    padding: var(--mpage-table-toolbar-padding);
+  }
+
+  .co-table-toolbar-column {
+    border: var(--mpage-table-toolbar-drag-border);
+    border-radius: var(--mpage-table-toolbar-drag-border-radius);
+    padding: var(--mpage-table-toolbar-drag-padding);
+    background: var(--mpage-table-toolbar-drag-background);
+  }
+
+  .co-table-toolbar-column:hover {
+    border: var(--mpage-table-toolbar-drag-border-alternate);
+    cursor: grab;
+  }
+
+  .co-table-toolbar-column-label {
+    width: 15rem;
+  }
+}
+
+.co-table-sidebar-content {
+  overflow-y: auto;
+  width: 26em;
+}
+
+/* MPage Scrollbar */
+.co-scroll-bar {
+  display: inline-flex;
+  width: 100%;
+  height: 100%;
+  background-color: var(--mpage-scrollbar-track);
+  padding: 0;
+  margin: 0;
+}
+
+.co-scroll-bar-thumb {
+  background-color: var(--mpage-scrollbar-color);
+  border: var(--mpage-scrollbar-border);
+  box-shadow: var(--mpage-scrollbar-shadow);
+}
+
+/* End of MPage Scrollbar */
+
+div.co-default-field {
+  display: flex;
+  flex-direction: column;
+  min-height: var(--field-min-height);
+  width: 100%;
+  background-color: var(--field-background-color);
+  border: var(--field-border);
+  border-radius: var(--field-border-radius);
+  box-shadow: var(--field-box-shadow);
+  font: inherit;
+
+  .co-field-label {
+    margin: 0 0.5em;
+    font-size: 0.7em;
+    overflow: clip;
+  }
+
+  .co-field-content, .co-field-input {
+    display: flex;
+    gap: 4px;
+    flex-grow: 1;
+    align-items: center;
+    margin: 0 0.5em;
+    height: 100%;
+  }
+
+  .co-input-color {
+    height: 1.5em !important;
+  }
+
+  .co-field-input {
+    > input, textarea {
+      background-color: inherit;
+      width: 100%;
+      height: inherit;
+      font: inherit;
+      border: none;
+      outline: none;
+    }
+  }
+}
+
+.co-default-field-required {
+  background-color: var(--field-required-background-color) !important;
+  border: var(--field-required-border) !important;
+  border-radius: var(--field-required-border-radius) !important;
+}
+
+.co-select-field-input {
+  height: 1.2em;
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: calc(100% - 24px);
+  overflow: clip;
+  overflow-clip-margin: content-box;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+div.co-context-menu {
+  overflow: auto;
+
+  li {
+    padding: 5px 5px 5px 5px;
+  }
+
+}
+
+div.co-select-template {
+  li {
+    padding: 5px 5px 5px 25px;
+  }
+}
+
+div.co-select-template, div.co-context-menu {
+  background-color: var(--context-background-color);
+  box-shadow: var(--context-shadow);
+  padding: 0.4em;
+  max-height: var(--select-field-max-height);
+
+  .co-tree-indent {
+    margin-left: var(--co-tree-indent-margin);
+  }
+
+  .co-tree-no-expand {
+    margin-left: var(--co-tree-no-expand-margin);
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+
+    li {
+      position: relative;
+    }
+
+    li[aria-selected='true']::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4Z"/></svg>'); /* stylelint-disable-line */
+      background-size: cover;
+      position: absolute;
+      left: 2px;
+    }
+
+    li:hover {
+      cursor: pointer;
+      background-color: var(--context-hover);
+    }
+  }
+}
+
+.co-tree-search-found {
+  background: var(--tree-search-found-background) !important;
+  color: var(--tree-search-found-color) !important;
+}
+
+.co-tabbed-menu {
+  border: var(--tabbed-menu-border);
+  background: var(--tabbed-menu-background);
+  margin: var(--tabbed-menu-margin);
+  padding: var(--tabbed-menu-padding);
+
+  flex-wrap: wrap;
+  width: auto;
+
+  > button {
+    white-space: nowrap;
+  }
+}
+
+
+/*
+  ---------------------
+  Global Button styles
+  ---------------------
+*/
+button.co-button {
+  border: var(--button-border);
+  background: unset;
+  color: inherit;
+  box-sizing: border-box;
+  overflow: visible;
+  text-align: center;
+  align-items: center;
+  border-radius: var(--button-border-radius);
+  margin: 0;
+
+  &:not(.co-icon-button) {
+    font-size: inherit;
+    min-height: var(--button-min-height);
+    padding: var(--button-padding);
+  }
+
+  &:is(.co-icon-button) {
+    font-size: 24px;
+    padding: 0;
+  }
+
+  &:disabled {
+    color: var(--text-color-alternate);
+
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+
+  &:enabled {
+    &:hover {
+      cursor: pointer;
+      color: var(--text-color-alternate);
+    }
+
+    &:active {
+      filter: brightness(0.5);
+    }
+  }
+}
+
+/* Stroked Button Additional Styling */
+button.co-stroked-button {
+  border: var(--button-stroke);
+
+  &:enabled:hover {
+    border: var(--button-stroke-alternate);
+  }
+}
+
+/* Raised Button Additional Styling */
+button.co-raised-button {
+  box-shadow: var(--button-shadow);
+
+  &:enabled:hover {
+    box-shadow: var(--button-shadow-alternate);
+  }
+}
+
+/* Button Default Color Scheme */
+.co-button-default-color {
+  &:not(.co-icon-button) {
+    background: var(--default-color);
+    color: var(--default-color-content);
+  }
+
+  &:is(.co-icon-button) {
+    color: var(--default-color-content);
+  }
+
+  &:hover {
+    &:not(.co-icon-button) {
+      background: var(--default-color-alternate) !important;
+      color: var(--default-color-content) !important;
+    }
+
+    &:is(.co-icon-button) {
+      color: var(--default-color-alternate) !important;
+    }
+  }
+}
+
+
+/* Button Primary Color Scheme */
+.co-button-primary-color {
+  &:not(.co-icon-button) {
+    background: var(--primary-color);
+    color: var(--primary-color-content);
+  }
+
+  &:is(.co-icon-button) {
+    color: var(--primary-color);
+  }
+
+  &:hover {
+    &:not(.co-icon-button) {
+      background: var(--primary-color-alternate) !important;
+      color: var(--primary-color-content) !important;
+    }
+
+    &:is(.co-icon-button) {
+      color: var(--primary-color-alternate) !important;
+    }
+  }
+}
+
+/* Button Accent Color Scheme */
+.co-button-accent-color {
+  &:not(.co-icon-button) {
+    background: var(--accent-color);
+    color: var(--accent-color-content);
+  }
+
+  &:is(.co-icon-button) {
+    color: var(--accent-color);
+  }
+
+  &:hover {
+    &:not(.co-icon-button) {
+      background: var(--accent-color-alternate) !important;
+      color: var(--accent-color-content) !important;
+    }
+
+    &:is(.co-icon-button) {
+      color: var(--accent-color-alternate) !important;
+    }
+  }
+}
+
+/* Button Warn Color Scheme */
+.co-button-warn-color {
+  &:not(.co-icon-button) {
+    background: var(--warn-color);
+    color: var(--warn-color-content);
+  }
+
+  &:is(.co-icon-button) {
+    color: var(--warn-color);
+  }
+
+  &:hover {
+    &:not(.co-icon-button) {
+      background: var(--warn-color-alternate) !important;
+      color: var(--warn-color-content) !important;
+    }
+
+    &:is(.co-icon-button) {
+      color: var(--warn-color-alternate) !important;
+    }
+  }
+}
+
+/*
+  ----------------------------
+  End of Global Button styles
+  ----------------------------
+*/
+
+/*
+  ----------------------------
+  Start of Paginator styles
+  ----------------------------
+*/
+.co-range-paginator {
+  height: 100%;
+  border: 1px solid;
+  border-collapse: collapse;
+}
+
+/*
+  ----------------------------
+  End of Paginator styles
+  ----------------------------
+*/
+
+/*
+  ----------------------------
+  Start of Dialog styles
+  ----------------------------
+*/
+.co-dialog-container, .co-modal-dialog-container {
+  display: flex;
+  background: unset;
+  border: unset;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.co-modal-dialog-container {
+  height: 100%;
+}
+
+.co-dialog {
+  background: var(--context-background-color);
+  box-shadow: var(--context-shadow);
+  border: var(--context-dialog-border);
+  border-radius: var(--context-dialog-border-radius);
+  padding: var(--dialog-padding)
+}
+
+div.dialog-button-bar {
+  display: flex;
+  gap: 4px;
+  justify-content: flex-end;
+}
+
+.dialog-content {
+  padding: var(--dialog-content-padding);
+  background: var(--dialog-content-background);
+}
+
+.co-notification {
+  padding: var(--notification-padding);
+  font-weight: var(--notification-font-weight);
+  border: var(--notification-border);
+  border-radius: var(--notification-border-radius);
+  box-shadow: var(--notification-box-shadow);
+  text-align: center;
+  word-wrap: break-word;
+}
+
+/*
+  ----------------------------
+  End of Dialog styles
+  ----------------------------
+*/

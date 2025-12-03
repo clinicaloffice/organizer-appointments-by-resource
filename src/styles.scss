@@ -1,0 +1,151 @@
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined';
+@import 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap';
+
+/* Component Variables */
+:root {
+
+  /* Default Text Colors, Font settings */
+  --text-color: black;
+  --text-color-alternate: grey;
+  --font-family: 'Roboto Condensed';
+  --font-generic-name: sans-serif;
+  --font-size: medium;
+
+  /* Colors for context menus, dialogs and select drop-downs */
+  --context-background-color: white;
+  --context-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+  --context-dialog-border: 1px solid grey;
+  --context-dialog-border-radius: 0;
+  --context-hover: grey;
+
+  /* Specialty Colors */
+  --default-color: white;
+  --default-color-content: black;
+  --default-color-alternate: grey;
+
+  --primary-color: #5783db;
+  --primary-color-content: white;
+  --primary-color-alternate: darkblue;
+
+  --accent-color: #55c2da;
+  --accent-color-content: darkblue;
+  --accent-color-alternate: #46697a;
+
+  --warn-color: #ed0800;
+  --warn-color-content: white;
+  --warn-color-alternate: darkred;
+
+  /*
+    NOTE: You can add as many specialty color combinations as you desire. Just ensure the variable names are consistent
+    with the pattern of --{{your name}}-color, --{{your name}}-color-content, and --{{your name}}-color-alternate. In
+    addition, you will also need to create matching CSS selectors to support the new colors. More information can be
+    found in the Clinical Office: MPage Developer online documentation.
+   */
+
+  /* MPage Input Fields */
+  --field-min-height: 3em;
+  --field-background-color: ghostwhite;
+  --field-border: unset;
+  --field-border-radius: 0;
+  --field-box-shadow: unset;
+  --field-required-background-color: rgb(242, 242, 140);
+  --field-required-border: unset;
+  --field-required-border-radius: 0;
+
+  /* MPage Notification */
+  --notification-padding: 0.5em;
+  --notification-font-weight: bold;
+  --notification-border: unset;
+  --notification-border-radius: 0;
+  --notification-box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+
+  /* MPage Select */
+  --select-search-border: 1px solid black;
+  --select-field-max-height: 30vh;
+
+  /* MPage Tree */
+  --co-tree-indent-margin: 15px;
+  --co-tree-no-expand-margin: 40px;
+  --tree-search-found-background: inherit;
+  --tree-search-found-color: green;
+
+  /* General Button Styling */
+  --button-min-height: 3em;
+  --button-padding: 0 1em;
+  --button-border: none;
+  --button-border-radius: 0;
+  --button-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  --button-shadow-alternate: 0 0 8px rgba(0, 0, 0, 0.3);
+  --button-stroke: 2px solid black;
+  --button-stroke-alternate: 2px solid black;
+
+  /* MPage Scrollbar colors */
+  --mpage-scrollbar-track: white;
+  --mpage-scrollbar-color: grey;
+  --mpage-scrollbar-border: 1px solid grey;
+  --mpage-scrollbar-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+  /* MPage Table */
+  --mpage-table-container-border: 1px solid lightgrey;
+  --mpage-table-font-size: inherit;
+  --mpage-table-header-height: 40px;
+  --mpage-table-header-background-color: rgb(124, 179, 198);
+  --mpage-table-row-height: 36px;
+  --mpage-table-background-color: white;
+  --mpage-table-cell-border: 1px solid lightgrey;
+  --mpage-table-sort-arrow-color: grey;
+  --mpage-table-filter-background-color: whitesmoke;
+  --mpage-table-toolbar-box-height: fit-content;
+  --mpage-table-toolbar-background-color: lightblue;
+  --mpage-table-toolbar-border-radius: 0;
+  --mpage-table-toolbar-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  --mpage-table-toolbar-icon-color: black;
+  --mpage-table-toolbar-padding: 8px;
+  --mpage-table-toolbar-drag-background: lightgrey;
+  --mpage-table-toolbar-drag-padding: 8px;
+  --mpage-table-toolbar-drag-border: unset;
+  --mpage-table-toolbar-drag-border-alternate: 2px solid;
+  --mpage-table-toolbar-drag-border-radius: 0;
+  --mpage-table-empty-space-background: repeating-linear-gradient(-30deg,
+    rgba(0, 0, 0, 0.04),
+    rgba(0, 0, 0, 0.04) 4px,
+    rgba(0, 0, 0, 0.08) 6px,
+    rgba(0, 0, 0, 0.08) 10px);
+
+  /* Dialog */
+  --dialog-padding: 1em;
+  --dialog-content-padding: 1em 0;
+  --dialog-content-background: inherit;
+
+  /* Tabbed Menu */
+  --tabbed-menu-border: unset;
+  --tabbed-menu-background: inherit;
+  --tabbed-menu-margin: unset;
+  --tabbed-menu-padding: unset;
+
+
+  /* General Application Font/Page Settings */
+  box-sizing: border-box;
+  font-family: var(--font-family), var(--font-generic-name);
+  font-size: var(--font-size);
+  color: var(--text-color);
+  margin: 0;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+
+/* Custom Styles for this Page */
+
+// Add your custom styles here
