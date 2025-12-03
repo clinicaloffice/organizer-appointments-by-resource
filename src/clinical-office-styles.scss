@@ -6,10 +6,6 @@
     this is your MPage and we encourage you to make modifications that suit your business needs.
 */
 
-@use '@angular/cdk' as cdk;
-
-@include cdk.overlay();
-
 .material-icons, .material-symbols-outlined {
   font-size: inherit;
 }

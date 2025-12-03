@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mpage-developer-template": {
+    "organizer-appointments-by-resource": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -18,7 +18,7 @@
           "builder": "@angular/build:application",
           "options": {
             "outputPath": {
-              "base": "dist/mpage-developer-template",
+              "base": "dist/organizer-appointments-by-resource",
               "browser": ""
             },
             "browser": "src/main.ts",
@@ -66,10 +66,10 @@
           },
           "configurations": {
             "production": {
-              "buildTarget": "mpage-developer-template:build:production"
+              "buildTarget": "organizer-appointments-by-resource:build:production"
             },
             "development": {
-              "buildTarget": "mpage-developer-template:build:development"
+              "buildTarget": "organizer-appointments-by-resource:build:development"
             }
           },
           "defaultConfiguration": "development"
