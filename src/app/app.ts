@@ -13,10 +13,11 @@ import {
   Dialog,
   OrganizationService, PersonService, PhoneService, ProblemService, ReferenceService, PrsnlService
 } from '@clinicaloffice/mpage-developer';
+import { Prompts } from "./components/prompts/prompts";
 
 @Component({
   selector: 'app-root',
-  imports: [MpageLogComponent],
+  imports: [MpageLogComponent, Prompts],
   templateUrl: './app.html',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -28,7 +29,7 @@ export class App implements OnInit {
   public MPage = inject(MPageService);
 
   ngOnInit() {
-    this.MPage.setMaxInstances(2, true, 'CHART', false);
+    this.MPage.setMaxInstances(2, true, 'ORGANIZER', false);
     this.MPage.defaultDateFormats = CUSTOM_DATE_FORMATS;
   }
 }

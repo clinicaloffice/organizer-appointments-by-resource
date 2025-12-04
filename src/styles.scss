@@ -28,9 +28,9 @@
   --primary-color-content: white;
   --primary-color-alternate: darkblue;
 
-  --accent-color: #55c2da;
+  --accent-color: #d5f6fe;
   --accent-color-content: darkblue;
-  --accent-color-alternate: #46697a;
+  --accent-color-alternate: #3a6a82;
 
   --warn-color: #ed0800;
   --warn-color-content: white;
@@ -147,5 +147,9 @@
 
 
 /* Custom Styles for this Page */
-
-// Add your custom styles here
+div.prompts {
+  padding: 0.5em;
+  background-color: var(--accent-color);
+  border: 1px solid var(--accent-color-alternate);
+  border-radius: 4px;
+}
