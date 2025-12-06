@@ -1,0 +1,53 @@
+<div class="flex-column flex-gap" style="min-height: inherit;">
+
+    <!-- Patient Name and Close Button -->
+    <div class="flex flex-gap">
+        <h2>{{ data()?.patientName }}</h2>
+        <span class="flex-fill"></span>
+        <button coButton="icon" (click)="dialogRef()?.close()">
+            <mpage-icon>close</mpage-icon>
+        </button>
+    </div>
+
+    <!-- MRN and FIN -->
+    <div class="flex flex-gap">
+        <span>MRN: {{ data()?.mrn }} </span>
+        <span>FIN: {{ data()?.fin }} </span>
+    </div>
+
+    <div style="border-bottom: 1px solid grey; margin: 0.5em 0">
+        <tabbed-menu [tabs]="menuItems" (clickTab)="tab.set($event.idName!)" />
+    </div>
+
+    <div class="flex-fill">
+    <!-- Display the chosen tab -->
+    @switch(tab()) {
+        @case('info') {
+            <h3>General Information</h3>
+            <div class="flex-column flex-gap margin">
+                <span>Appointment Date/Time: {{ data().appointmentDtTm | date: customService.MPage.defaultDateFormats.display.dateTimeLabel }}</span>
+                <span>Appointment Type: {{ data().appointmentType }}</span>
+                <span>Appointment Location: {{ data().appointmentLocation }}</span>
+                <span>Appointment State: {{ data().appointmentState }}</span>
+            </div>
+
+            <h3>Resources</h3>
+            @if (allowRender()) {
+                <mpage-table [data]="customService.get('eventData').resources" [params]="{columnFilter: false}" />
+            }
+        }
+        @case('details') {
+            <h3>Appointment Details</h3>
+            <mpage-table [data]="customService.get('eventData').details" [params]="{columnFilter: false}" />
+        }
+        @case('orders') {
+            <h3>Attached Orders</h3>
+            <mpage-table [data]="customService.get('eventData').orders" [params]="{columnFilter: false, maxInitialColumnWidth: 600}" />
+        }
+    }
+    </div>
+    
+    <div class="dialog-button-bar">
+        <button coButton color="primary" (click)="dialogRef()?.close()">Close</button>
+    </div>
+</div>

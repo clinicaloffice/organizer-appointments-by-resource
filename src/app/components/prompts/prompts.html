@@ -1,7 +1,7 @@
 <div class="prompts flex flex-gap flex-center-items">
-    <mpage-date-range-picker [(ngModel)]="datePrompt" [rangeTypes]="rangeTypes" label="Appointment Date(s)" />
-    <mpage-select [(ngModel)]="resourcePrompt" [codeSet]="14231" label="Resource(s)" [multiple]="true" class="co-w30" />
-    <button coButton color="primary" title="Refresh View" (click)="refresh()">
+    <mpage-date-range-picker [(ngModel)]="datePrompt" [rangeTypes]="rangeTypes" label="Appointment Date(s)" [required]="true" />
+    <mpage-select [(ngModel)]="resourcePrompt" [codeSet]="14231" label="Resource(s)" [multiple]="true" class="co-w30" [required]="true" />
+    <button coButton color="primary" title="Refresh View" (click)="refresh()" [disabled]="requirementsNotMet()">
         <mpage-icon>refresh</mpage-icon>
     </button>
 </div>

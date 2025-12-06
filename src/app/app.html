@@ -1,3 +1,7 @@
-<app-prompts />
+<app-prompts (dataReady)="loadTable()" />
+
+<div coRemainingScreenSpace>
+    <mpage-table [data]="tableData()" [params]="{showToolbar: true}" (clickRow)="showDetails($event)" />
+</div>
 
 <mpage-log-component />
