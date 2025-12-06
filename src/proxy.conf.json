@@ -1,7 +1,6 @@
 {
     "/cclproxy/*": {
-      "xtarget": "http://sub_domain.host_name.com/mpages/reports",
-      "target": "http://104.170.202.167/discern/b0783.phsa_cd.cerncd.com/mpages/reports",
+      "target": "http://sub_domain.host_name.com/mpages/reports",
       "secure": false,
       "changeOrigin": true,
       "logLevel": "debug",
